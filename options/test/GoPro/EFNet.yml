@@ -37,7 +37,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: ./experiments/pretrained_models/net_g_latest_GoPro.pth
+  pretrain_network_g: /kaggle/working/EFNet/experiments/pretrained_models/net_g_latest_GoPro.pth
   strict_load_g: true
   resume_state: ~
   root: ./
