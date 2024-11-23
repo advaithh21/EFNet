@@ -11,7 +11,7 @@ datasets:
     name: gopro-bestmodel-test
     type: H5ImageDataset
 
-    dataroot: ./datasets/GoPro/test # for debug
+    dataroot: /kaggle/input/goprowithscer # for debug
 
     # add
     norm_voxel: true
