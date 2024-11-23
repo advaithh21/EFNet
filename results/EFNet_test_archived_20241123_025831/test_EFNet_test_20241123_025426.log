@@ -1,0 +1,72 @@
+2024-11-23 02:54:26,502 INFO: 
+                ____                _       _____  ____
+               / __ ) ____ _ _____ (_)_____/ ___/ / __ \
+              / __  |/ __ `// ___// // ___/\__ \ / /_/ /
+             / /_/ // /_/ /(__  )/ // /__ ___/ // _, _/
+            /_____/ \__,_//____//_/ \___//____//_/ |_|
+     ______                   __   __                 __      __
+    / ____/____   ____   ____/ /  / /   __  __ _____ / /__   / /
+   / / __ / __ \ / __ \ / __  /  / /   / / / // ___// //_/  / /
+  / /_/ // /_/ // /_/ // /_/ /  / /___/ /_/ // /__ / /<    /_/
+  \____/ \____/ \____/ \____/  /_____/\____/ \___//_/|_|  (_)
+    
+Version Information: 
+	BasicSR: 1.2.0+ac1e6b0
+	PyTorch: 1.7.1
+	TorchVision: 0.8.2
+2024-11-23 02:54:26,502 INFO: 
+  name: EFNet_test
+  model_type: TestImageEventRestorationModel
+  scale: 1
+  num_gpu: 1
+  manual_seed: 10
+  datasets:[
+    test:[
+      name: gopro-bestmodel-test
+      type: H5ImageDataset
+      dataroot: /cluster/work/cvl/leisun/GOPRO_fullsize_h5_bin6_ver3/test
+      norm_voxel: True
+      return_voxel: True
+      return_gt_frame: False
+      return_mask: True
+      use_mask: True
+      crop_size: None
+      use_flip: False
+      use_rot: False
+      io_backend:[
+        type: h5
+      ]
+      phase: test
+      scale: 1
+    ]
+  ]
+  dataset_name: GoPro
+  network_g:[
+    type: EFNet
+    wf: 64
+    fuse_before_downsample: True
+  ]
+  path:[
+    pretrain_network_g: ./experiments/pretrained_models/net_g_latest.pth
+    strict_load_g: True
+    resume_state: None
+    root: ./
+    results_root: ./results/EFNet_test
+    log: ./results/EFNet_test
+    visualization: ./results/EFNet_test/visualization
+  ]
+  val:[
+    save_img: True
+    grids: None
+    crop_size: None
+    rgb2bgr: False
+  ]
+  dist_params:[
+    backend: nccl
+    port: 29500
+  ]
+  is_train: False
+  dist: False
+  rank: 0
+  world_size: 1
+

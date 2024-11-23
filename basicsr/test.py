@@ -1,5 +1,6 @@
 import logging
 import torch
+torch.cuda.empty_cache()
 from os import path as osp
 
 from basicsr.data import create_dataloader, create_dataset

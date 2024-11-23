@@ -11,7 +11,7 @@ datasets:
     name: gopro-bestmodel-test
     type: H5ImageDataset
 
-    dataroot: /cluster/work/cvl/leisun/GOPRO_fullsize_h5_bin6_ver3/test # for debug
+    dataroot: ./datasets/GoPro/test # for debug
 
     # add
     norm_voxel: true
@@ -37,10 +37,10 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: /cluster/work/cvl/leisun/log/experiments/EVTransformer-Finetune-2e4-300iter/models/net_g_latest.pth
+  pretrain_network_g: ./experiments/pretrained_models/net_g_latest_GoPro.pth
   strict_load_g: true
   resume_state: ~
-  root: /cluster/work/cvl/leisun/EFNet_inference/  # set this option ONLY in TEST!!!
+  root: ./
 
 # validation settings
 val:
